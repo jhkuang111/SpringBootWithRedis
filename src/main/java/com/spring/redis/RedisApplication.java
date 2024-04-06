@@ -35,6 +35,10 @@ public class RedisApplication implements CommandLineRunner {
 		martian.setSummary("One problem at a time and survive");
 		bookRepository.save(martian);
 		logger.info(String.valueOf(bookRepository.findAll()));
+		authorRepository.deleteAll();
+		bookRepository.deleteAll();
+		logger.info(String.valueOf(authorRepository.findAll()));
+		logger.info(String.valueOf(bookRepository.findAll()));
 	}
 
 }
